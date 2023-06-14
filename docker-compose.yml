@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  echoapp:
+    build: .
+    container_name: echoapp
+    volumes:
+      - .:/go/src/
+    ports:
+    - "3000:3000"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+
