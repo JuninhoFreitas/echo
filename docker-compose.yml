@@ -1,16 +1,23 @@
 version: "3"
 
 services:
-  echoapp:
-    build: .
-    container_name: echoapp
-    volumes:
-      - .:/go/src/
-    ports:
-    - "3000:3000"
+  # echoapp:
+  #   build: .
+  #   container_name: echoapp
+  #   volumes:
+  #     - .:/go/src/
+  #   ports:
+  #   - "3000:3000"
+  #   networks:
+  #     - mynetwork
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
     networks:
       - mynetwork
-
 networks:
   mynetwork:
 
